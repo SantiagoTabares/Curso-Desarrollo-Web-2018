@@ -81,7 +81,7 @@ body{
     margin-top: 0.5em;
     text-align: center;
     overflow-x: auto;
-    background: var(--c-oscuro);
+    background: var(--c-secundario);
 
 }
 .main .contenedor-iframe iframe {
@@ -99,7 +99,12 @@ body{
     text-align: center;
     margin: 0 auto;
     transition: background-color 0.5s;
-    
+}
+.nav .nav-links {
+    display: none;
+}
+.nav .nav-links.mostrar {
+    display: block;
 }
 .nav .nav-links li:hover {
     background:  var(--c-terciario);
