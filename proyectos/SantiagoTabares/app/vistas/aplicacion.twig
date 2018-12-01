@@ -1,0 +1,56 @@
+{% extends "plantillas/base.twig" %}
+
+{% block titulo %}Aplicacion de Repositorio{% endblock %}
+
+{% block stylesheet %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ constant('APP_URL') }}assets/css/aplicacion.css">
+{% endblock %}
+
+{% block contenido %}
+    <div class="contenedor">
+        <header class="header">
+            <nav class="nav">  <!--Elementos de navegacion -->
+                <span class="menu-open icono-grande" id ="btn-menu-open"> <!--(span)Poner elementos en la misma linea-->
+                        <i class="fe fe-list-bullet"></i> <!--Iconos-->
+                </span>
+                <span class="nav-toggle icono-grande" id="btn-nav-toggle">
+                    <i class="fe fe-bar"></i>
+                </span>
+        
+                <ul class="nav-links lista-links" id="nav-links"> <!--Lista con iconos(ol lista de numeros)-->
+                    <li><a href="{{ path_for('inicio')}}">Inicio</a></li> <!--enlace/direccion(#se queda en la misma pagina)-->
+                    <li><a href="#">Contactos</a></li>
+                    <li><a href="#">Dudas </a></li>
+                    <li><a href="#">Nueva actividad</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="menu" id="menu-lateral">
+            <span class="menu-close" id="btn-menu-close">
+                <i class="fe fe-close"></i>
+            </span>
+            <ul class="menu-links lista-links id=" id="menu-links">
+                <li><a href="#">Angular</a></li>
+                <li><a href="#">VueJS</a></li>
+                <li><a href="#">React</a></li>
+                <li><a href="#">Ember</a></li>
+                <li><a href="#">Backbone</a></li>
+            </ul>
+        </div>
+        <section class="main">
+            <div class="instruccion">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quos, voluptatem at odit asperiores, laudantium officiis aliquid id ipsam quod placeat nam laboriosam eveniet. Cupiditate possimus iste tenetur accusantium modi.</p>
+            </div>
+            <div class="contenedor-iframe">
+                <iframe id="iframe" name = "main-iframe"  src="assts/uploads/actividades/actividad-normal" frameboard="0"></iframe>
+            </div>
+        </section>
+        {% include "fragmentos/footer.twig" %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ constant('APP_URL') }}assets/js/aplicacion.js"></script>
+{% endblock  %}
